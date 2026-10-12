@@ -2,6 +2,8 @@
 
 My freelance portfolio: websites, online stores, and AI features for small businesses and nonprofits, launched without downtime.
 
+**Live site:** https://jasonmcelvain.netlify.app
+
 ![Portfolio homepage with a live status board of client deployments](docs/screenshot.jpg)
 
 ## What's on it
@@ -13,6 +15,6 @@ My freelance portfolio: websites, online stores, and AI features for small busin
 Hand-written HTML and CSS in a single page, no framework and no build step. Typography is one variable font (Archivo) used across its width axis: expanded for headlines, normal for reading. Responsive down to 390 px, keyboard-focus visible, and it respects reduced-motion settings.
 
 ## Deploy
-Connect this repo to Netlify (publish directory: `/`). `netlify.toml` sets long-term caching for images and basic security headers.
+Deployed on Netlify from this repo's `main` branch: every push redeploys automatically (publish directory: `/`). `netlify.toml` sets long-term caching for images and basic security headers.
 
 Built by [Jason McElvain](https://github.com/MacSupportPlus).
