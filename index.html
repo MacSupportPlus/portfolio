@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jason McElvain — Full-Stack & AI Integration Developer</title>
+<meta name="description" content="Jason McElvain builds and launches websites, online stores, and AI features for small businesses and nonprofits — without taking anything offline. Former Navy nuclear operator, enterprise software engineer.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jason McElvain — Full-Stack & AI Integration Developer">
+<meta property="og:description" content="Websites, online stores, and AI features — built properly and launched without downtime.">
+<meta property="og:image" content="img/lower-echelon.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#13201d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2313201d'/%3E%3Ccircle cx='50' cy='14' r='5' fill='%2334c37a'/%3E%3Ctext x='30' y='45' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='30' text-anchor='middle' fill='%23eef1ef'%3EJM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#eef1ef;      /* cool panel grey-white */
+  --panel:#ffffff;
+  --ink:#13201d;        /* deep green-black, instrument ink */
+  --ink-2:#3c4a46;
+  --steel:#66746f;
+  --rule:#cfd6d2;
+  --live:#1f8a5b;       /* signal green */
+  --live-glow:#34c37a;
+  --amber:#b57a0b;      /* preview / in progress */
+  --amber-bg:#fbf1dc;
+  --wide:125; --semi:112;
+  --max:1180px;
+  --gutter:clamp(16px,4vw,40px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'Archivo',system-ui,sans-serif;font-size:1.0625rem;line-height:1.6;
+  font-variation-settings:'wdth' 100;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--live-glow);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:8px 14px;border-radius:6px;z-index:99}
+.skip:focus{left:8px}
+
+/* ── Type ── */
+h1,h2,h3{font-variation-settings:'wdth' var(--wide);line-height:1.02;letter-spacing:-0.015em}
+h1{font-weight:850;font-size:clamp(2.3rem,4.8vw,3.95rem)}
+h2{font-weight:800;font-size:clamp(1.9rem,3.6vw,3rem)}
+h3{font-weight:750;font-size:clamp(1.35rem,2.2vw,1.75rem)}
+.lede{font-size:clamp(1.1rem,1.6vw,1.3rem);color:var(--ink-2);max-width:34em}
+.muted{color:var(--steel)}
+.num{font-variant-numeric:tabular-nums}
+
+/* ── Header ── */
+.site-head{position:sticky;top:0;z-index:50;background:rgba(238,241,239,.88);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+.site-head.scrolled{border-bottom-color:var(--rule)}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:68px}
+.brand{font-weight:850;font-variation-settings:'wdth' var(--wide);text-decoration:none;font-size:1.1rem;letter-spacing:-0.01em;display:flex;align-items:center;gap:.55rem}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--live-glow);box-shadow:0 0 0 3px rgba(52,195,122,.22)}
+.nav{display:flex;align-items:center;gap:1.6rem}
+.nav a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--ink-2)}
+.nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;text-decoration:none;font-weight:650;font-size:1rem;padding:.8rem 1.25rem;border-radius:8px;border:2px solid var(--ink);transition:background .15s,color .15s,transform .15s;cursor:pointer;font-family:inherit}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:#000;transform:translateY(-1px)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+.nav .btn{padding:.55rem 1rem;font-size:.92rem;color:var(--paper)}
+@media(max-width:760px){.nav a:not(.btn){display:none}}
+
+/* ── Hero ── */
+.hero{padding:clamp(48px,8vw,104px) 0 clamp(56px,8vw,96px)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{margin:.35em 0 .45em;max-width:12.5em}
+.hero .who{font-weight:600;color:var(--steel);font-size:1rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.creds{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin-top:2.2rem;font-size:.92rem;color:var(--ink-2)}
+.creds span{display:flex;align-items:center;gap:.45rem}
+.creds svg{flex:none;color:var(--live)}
+
+/* Status board — the one bold element */
+.board{background:var(--ink);color:#dfe7e3;border-radius:14px;padding:1.4rem 1.4rem 1.1rem;box-shadow:0 30px 60px -30px rgba(19,32,29,.55)}
+.board-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1rem;gap:1rem}
+.board-title{font-weight:700;font-variation-settings:'wdth' var(--semi);color:#fff;font-size:1rem}
+.board-clock{font-size:.82rem;color:#8fa29b}
+.board ul{list-style:none}
+.board li{display:grid;grid-template-columns:auto 1fr auto;gap:.8rem;align-items:center;padding:.85rem 0;border-top:1px solid rgba(255,255,255,.09)}
+.board li a{color:#fff;text-decoration:none;font-weight:600;font-size:.98rem}
+.board li a:hover{text-decoration:underline;text-underline-offset:3px}
+.board .host{display:block;font-size:.8rem;color:#8fa29b;font-weight:400}
+.lamp{width:10px;height:10px;border-radius:50%}
+.lamp.live{background:var(--live-glow);box-shadow:0 0 10px 2px rgba(52,195,122,.55)}
+.lamp.prev{background:#f0b232;box-shadow:0 0 10px 2px rgba(240,178,50,.4)}
+.state{font-size:.8rem;font-weight:600;padding:.2rem .55rem;border-radius:99px;white-space:nowrap}
+.state.live{color:#7ee2ad;background:rgba(52,195,122,.12)}
+.state.prev{color:#f6cd77;background:rgba(240,178,50,.12)}
+.board-foot{margin-top:.9rem;padding-top:.9rem;border-top:1px solid rgba(255,255,255,.09);font-size:.85rem;color:#8fa29b}
+@media (prefers-reduced-motion:no-preference){
+  .lamp.live{animation:pulse 2.8s ease-in-out infinite}
+  @keyframes pulse{50%{box-shadow:0 0 3px 0 rgba(52,195,122,.35)}}
+  .board li{opacity:0;transform:translateY(6px);animation:in .5s ease forwards}
+  .board li:nth-child(1){animation-delay:.15s}.board li:nth-child(2){animation-delay:.3s}
+  .board li:nth-child(3){animation-delay:.45s}.board li:nth-child(4){animation-delay:.6s}.board li:nth-child(5){animation-delay:.75s}
+  @keyframes in{to{opacity:1;transform:none}}
+}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+
+/* ── Sections ── */
+section{padding:clamp(64px,9vw,120px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(32px,5vw,56px)}
+.sec-head p{max-width:30em;color:var(--ink-2)}
+.band{background:var(--panel);border-block:1px solid var(--rule)}
+
+/* ── Case studies ── */
+.case{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:start;padding:clamp(36px,5vw,56px) 0;border-top:1px solid var(--rule)}
+.case:first-of-type{border-top:0;padding-top:0}
+.case.flip{grid-template-columns:.9fr 1.1fr}
+.case.flip .case-media{order:2}
+.case>*{min-width:0}
+.case-media{position:relative}
+.shot{border-radius:12px;overflow:hidden;border:1px solid var(--rule);background:#dfe5e2;box-shadow:0 24px 48px -28px rgba(19,32,29,.45)}
+.shot .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#e4e9e6;border-bottom:1px solid var(--rule);font-size:.75rem;color:var(--steel)}
+.shot .bar i{width:9px;height:9px;border-radius:50%;background:#c3ccc8}
+.shot .bar span{margin-left:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shot img{width:100%;height:auto}
+.shot.tall img{max-height:640px;object-fit:cover;object-position:top}
+.inset{position:absolute;width:34%;height:auto;right:-4%;bottom:-8%;border-radius:12px;overflow:hidden;border:4px solid var(--panel);box-shadow:0 18px 36px -18px rgba(19,32,29,.6)}
+.inset.phone{width:23%;bottom:-6%}
+.case-body h3{margin:.5rem 0 .9rem}
+.client{display:flex;align-items:center;gap:.55rem;font-weight:600;font-size:.95rem;color:var(--ink-2)}
+.case-body p{color:var(--ink-2);margin-bottom:1rem;max-width:36em}
+.did{list-style:none;margin:1.2rem 0 1.4rem;display:grid;gap:.6rem}
+.did li{position:relative;padding-left:1.4rem;color:var(--ink-2)}
+.did li::before{content:'';position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--live)}
+.did strong{color:var(--ink);font-weight:650}
+.stack{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.4rem}
+.stack span{font-size:.82rem;font-weight:550;padding:.28rem .62rem;border-radius:6px;background:var(--paper);border:1px solid var(--rule);color:var(--ink-2)}
+.links{display:flex;flex-wrap:wrap;gap:1.2rem;font-weight:650}
+.links a{text-underline-offset:4px;text-decoration-thickness:2px;text-decoration-color:var(--live)}
+.links a:hover{color:var(--live)}
+
+/* R.I.C.H. Fest card art: their palette, their photo */
+.rich-art{aspect-ratio:16/10;position:relative;background:#060608 url('https://richfest.org/ct_sign.jpg') center 30%/cover;display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem 1.6rem}
+.rich-art::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,6,8,.35),rgba(6,6,8,.92) 78%)}
+.rich-art *{position:relative}
+.rich-word{font-weight:900;font-variation-settings:'wdth' 62;font-size:clamp(3.4rem,8vw,5.6rem);line-height:.85;letter-spacing:.02em}
+.rich-word b:nth-of-type(1),.rich-word b:nth-of-type(4){color:#E83C3C}.rich-word b:nth-of-type(2){color:#F5D340}.rich-word b:nth-of-type(3){color:#28A844}
+.rich-word em{font-style:normal;color:#F5D340;font-size:.45em}
+.rich-sub{color:#F2EDE4;font-weight:500;letter-spacing:.3em;font-size:.95rem;margin-top:.3rem}
+.rich-tix{display:flex;gap:.4rem;margin-top:1rem}
+.rich-tix span{font-size:.72rem;color:#F2EDE4;border:1px solid rgba(255,255,255,.25);padding:.25rem .55rem;border-radius:3px}
+
+
+/* ── Services ── */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:2px solid var(--ink)}
+.svc{padding:2rem 2rem 2rem 0;border-bottom:1px solid var(--rule)}
+.svc:nth-child(odd){border-right:1px solid var(--rule)}
+.svc:nth-child(even){padding-left:2rem;padding-right:0}
+.svc h3{font-size:1.45rem;margin-bottom:.6rem}
+.svc p{color:var(--ink-2);max-width:30em}
+.price{display:block;margin-top:1rem;font-weight:700;font-size:1.05rem}
+.price small{font-weight:500;color:var(--steel);font-size:.9rem}
+.ai-note{margin-top:2.2rem;padding:1.3rem 1.5rem;border-radius:12px;background:var(--panel);border:1px solid var(--rule);display:flex;gap:1rem;align-items:flex-start;max-width:52em}
+.ai-note svg{flex:none;color:var(--live);margin-top:.15rem}
+@media(max-width:760px){.svc-grid{grid-template-columns:1fr}.svc,.svc:nth-child(even){padding:1.6rem 0;border-right:0}}
+
+/* ── Process (a real sequence) ── */
+.steps{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem;counter-reset:s}
+.steps li{counter-increment:s;padding-top:1.1rem;border-top:3px solid var(--ink)}
+.steps li::before{content:counter(s);display:block;font-weight:850;font-variation-settings:'wdth' var(--wide);font-size:2.2rem;line-height:1;margin-bottom:.8rem;color:var(--live)}
+.steps h3{font-size:1.1rem;margin-bottom:.4rem;font-variation-settings:'wdth' var(--semi)}
+.steps p{font-size:.95rem;color:var(--ink-2)}
+@media(max-width:960px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* ── About ── */
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,80px)}
+.about-body p{margin-bottom:1.1rem;color:var(--ink-2);max-width:36em}
+.about-body p:first-child{font-size:1.25rem;color:var(--ink);font-weight:500}
+.facts{list-style:none;display:grid;gap:0;border-top:2px solid var(--ink);align-self:start}
+.facts li{display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--rule);font-size:.97rem}
+.facts li span:first-child{color:var(--steel)}
+.facts li span:last-child{font-weight:600;text-align:right}
+@media(max-width:860px){.case-media{margin-bottom:2.2rem}.about-grid{grid-template-columns:1fr}.case,.case.flip{grid-template-columns:1fr}.case.flip .case-media{order:0}.inset{right:2%}}
+
+/* ── Contact ── */
+.contact{background:var(--ink);color:#e6ece9}
+.contact h2{color:#fff}
+.contact .lede{color:#b5c3be}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,80px);align-items:start}
+form{display:grid;gap:1rem}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{display:grid;gap:.35rem;font-weight:600;font-size:.92rem;color:#dfe7e3}
+input,select,textarea{font:inherit;font-size:1rem;color:var(--ink);background:#f6f8f7;border:2px solid transparent;border-radius:8px;padding:.75rem .85rem;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--live-glow)}
+textarea{min-height:130px;resize:vertical}
+.contact .btn-ink{background:var(--live-glow);border-color:var(--live-glow);color:var(--ink);justify-self:start}
+.contact .btn-ink:hover{background:#5fd796}
+.hp{position:absolute;left:-9999px}
+.reply{margin-top:1.6rem;font-size:.95rem;color:#b5c3be}
+.reply strong{color:#fff}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.row2{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:#8fa29b;font-size:.88rem;padding:0 0 2.2rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,.1);padding-top:1.4rem}
+footer a{color:#cfdad6}
+</style>
+</head>
+<body>
+<a class="skip" href="#work">Skip to work</a>
+
+<header class="site-head" id="top">
+  <div class="wrap head-in">
+    <a class="brand" href="#top"><span class="dot" aria-hidden="true"></span>Jason McElvain</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a class="btn btn-ink" href="#contact">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="who">Jason McElvain, full-stack & AI integration developer in Raleigh, NC</p>
+      <h1 id="hero-title">Websites, online stores, and AI features, launched without taking your business offline.</h1>
+      <p class="lede">I design, build, and move sites for small businesses and nonprofits. You get one person who handles the code, the hosting, the domain, and the email, and who checks every step before the switch is flipped.</p>
+      <div class="hero-cta">
+        <a class="btn btn-ink" href="#contact">Tell me about your project</a>
+        <a class="btn btn-line" href="#work">See recent work</a>
+      </div>
+      <div class="creds">
+        <span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>U.S. Navy nuclear propulsion veteran</span>
+        <span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Enterprise software engineer by day</span>
+        <span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Fixed quotes, no surprise invoices</span>
+      </div>
+    </div>
+
+    <aside class="board" aria-label="Current client deployments">
+      <div class="board-top">
+        <span class="board-title">What I'm running right now</span>
+        <span class="board-clock num" id="clock">Raleigh</span>
+      </div>
+      <ul>
+        <li><span class="lamp live" aria-hidden="true"></span>
+          <span><a href="https://communityhavenchattanooga.org" target="_blank" rel="noopener">communityhavenchattanooga.org</a><span class="host">Nonprofit rebuild, Netlify</span></span>
+          <span class="state live">Live</span></li>
+        <li><span class="lamp live" aria-hidden="true"></span>
+          <span><a href="https://richfest.org" target="_blank" rel="noopener">richfest.org</a><span class="host">Festival site and ticketing, Netlify</span></span>
+          <span class="state live">Live</span></li>
+        <li><span class="lamp prev" aria-hidden="true"></span>
+          <span><a href="https://lower-echelon-worldwide.lowerechelon.workers.dev" target="_blank" rel="noopener">Lower Echelon store</a><span class="host">Next.js + Postgres, Cloudflare Workers</span></span>
+          <span class="state prev">Preview</span></li>
+        <li><span class="lamp live" aria-hidden="true"></span>
+          <span><a href="https://macsupportplus.github.io/fantasy-football-draft-assistant/" target="_blank" rel="noopener">Draft assistant</a><span class="host">Angular + data pipeline, GitHub Pages</span></span>
+          <span class="state live">Live</span></li>
+        <li><span class="lamp live" aria-hidden="true"></span>
+          <span><a href="https://bet-edge-app.netlify.app/" target="_blank" rel="noopener">Edge calculator</a><span class="host">Probability model + live odds, Netlify</span></span>
+          <span class="state live">Live</span></li>
+      </ul>
+      <p class="board-foot">Every launch follows the same checklist: old site stays up, DNS and email records copied first.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="band" id="work" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="work-title">Recent work</h2>
+      <p>Real clients, real launches. Each one below is live or in a client preview you can open right now.</p>
+    </div>
+
+    <article class="case">
+      <div class="case-media">
+        <div class="shot">
+          <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>lower-echelon-worldwide.lowerechelon.workers.dev</span></div>
+          <img src="img/lower-echelon.jpg" width="1030" height="1330" alt="Lower Echelon storefront homepage: a model in a green Lower Echelon track jacket in front of a housing tower" loading="lazy">
+        </div>
+        <img class="inset" src="img/lower-echelon-detail.jpg" width="700" height="1056" alt="Lower Echelon branded basketball held up against a brick building" loading="lazy">
+      </div>
+      <div class="case-body">
+        <span class="client">Lower Echelon Worldwide, NYC streetwear brand</span>
+        <h3>A custom online store to replace an aging WooCommerce site</h3>
+        <p>The brand had outgrown a stock WordPress theme. I'm rebuilding it as a fast, motion-heavy storefront the owner runs himself, staged so the live shop is never at risk during the move.</p>
+        <ul class="did">
+          <li><strong>Owner-only admin panel</strong> to edit products, prices, per-size stock, and view orders, backed by a live Postgres database.</li>
+          <li><strong>Solved a hosting blocker:</strong> Prisma's query engine can't run on Cloudflare Workers, so I kept Prisma for the schema and switched runtime queries to Kysely over Neon's HTTP driver. Verified in the real Workers runtime, not just locally.</li>
+          <li><strong>Runs on Cloudflare's free tier</strong> at about 1.2 MB, with a cutover plan that copies every DNS and email record before anything moves.</li>
+        </ul>
+        <div class="stack"><span>Next.js</span><span>TypeScript</span><span>Postgres (Neon)</span><span>Kysely</span><span>Cloudflare Workers</span><span>GSAP</span><span>Stripe (in progress)</span></div>
+        <div class="links"><a href="https://lower-echelon-worldwide.lowerechelon.workers.dev" target="_blank" rel="noopener">Open the preview</a><a href="https://github.com/MacSupportPlus/lower-echelon-storefront" target="_blank" rel="noopener">Read the code on GitHub</a></div>
+      </div>
+    </article>
+
+    <article class="case flip">
+      <div class="case-media">
+        <div class="shot">
+          <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>communityhavenchattanooga.org</span></div>
+          <img src="img/community-haven.jpg" width="1440" height="900" alt="Community Haven homepage: 'House by house. Street by street. Block by block.' over a photo of the Haven building" loading="lazy">
+        </div>
+        <img class="inset phone" src="img/community-haven-mobile.jpg" width="390" height="844" alt="The same homepage on a phone" loading="lazy">
+      </div>
+      <div class="case-body">
+        <span class="client">The Community Haven, Chattanooga nonprofit</span>
+        <h3>A nonprofit site rebuilt and moved off a locked-in host</h3>
+        <p>The old site was built with a page builder and tied to its hosting company. I rebuilt it by hand, then moved the domain and hosting so the organization owns everything outright.</p>
+        <ul class="did">
+          <li><strong>New homepage, team page, and 11 program pages</strong> written around the neighborhood's story, with the org's real logo and photos.</li>
+          <li><strong>Zero-downtime move:</strong> built on a temporary address while the old site stayed up, got sign-off, lowered DNS cache times, then switched and verified SSL.</li>
+          <li><strong>Domain moved to Cloudflare Registrar</strong> so renewals are at cost and nobody else holds the keys.</li>
+        </ul>
+        <div class="stack"><span>HTML / CSS / JS</span><span>Netlify</span><span>Cloudflare DNS</span><span>Accessibility</span><span>Mobile-first</span></div>
+        <div class="links"><a href="https://communityhavenchattanooga.org" target="_blank" rel="noopener">Visit the live site</a><a href="https://github.com/MacSupportPlus/community-haven" target="_blank" rel="noopener">Read the code on GitHub</a></div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-media">
+        <div class="shot">
+          <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>richfest.org</span></div>
+          <div class="rich-art" role="img" aria-label="R.I.C.H. Fest website hero in red, yellow, and green">
+            <div class="rich-word"><b>R</b><em>.</em><b>I</b><em>.</em><b>C</b><em>.</em><b>H</b></div>
+            <div class="rich-sub">FEST · CHATTANOOGA</div>
+            <div class="rich-tix"><span>Day 1 · Eventbrite</span><span>Day 2 · Eventbrite</span><span>Day 3 · Stripe</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="client">R.I.C.H. Fest, three-day community festival</span>
+        <h3>A festival site and ticketing, moved off Wix</h3>
+        <p>The organizer needed one place to show the schedule and sell tickets for three different events, on hosting the festival controls instead of a Wix plan.</p>
+        <ul class="did">
+          <li><strong>Designed and built a one-page site</strong> around the festival's four pillars, with the founder's story and real event photos.</li>
+          <li><strong>Ticketing for three events:</strong> two free Eventbrite registrations and a paid Stripe checkout for the finale.</li>
+          <li><strong>Moved the domain off Wix</strong> to Netlify with the DNS cutover handled end to end.</li>
+        </ul>
+        <div class="stack"><span>HTML / CSS</span><span>Netlify</span><span>Stripe Payment Links</span><span>Eventbrite</span><span>DNS migration</span></div>
+        <div class="links"><a href="https://richfest.org" target="_blank" rel="noopener">Visit the live site</a><a href="https://github.com/MacSupportPlus/richfest" target="_blank" rel="noopener">Read the code on GitHub</a></div>
+      </div>
+    </article>
+
+    <article class="case flip">
+      <div class="case-media">
+        <div class="shot tall">
+          <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>macsupportplus.github.io/fantasy-football-draft-assistant</span></div>
+          <img src="img/draft-assistant.jpg" width="800" height="1190" alt="Draft board ranking the best available players by value over replacement, each with a Draft button" loading="lazy">
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="client">Personal project, data and analytics</span>
+        <h3>A draft tool that ranks players by value, not raw points</h3>
+        <p>A live draft assistant built for my own 14-team league. It merges three public data sources, projects each player's season, and re-ranks the board after every pick.</p>
+        <ul class="did">
+          <li><strong>Data pipeline in TypeScript</strong> pulling from Sleeper, FantasyPros, and nflverse, matching players across sources and rebuilt on a schedule by GitHub Actions.</li>
+          <li><strong>Value-based drafting:</strong> injury-adjusted, recency-weighted projections compared against a replacement-level player at each position.</li>
+          <li><strong>No server to pay for:</strong> an Angular front end reads static JSON and keeps the draft state in the browser.</li>
+        </ul>
+        <div class="stack"><span>Angular</span><span>TypeScript</span><span>Node</span><span>GitHub Actions</span><span>Data modeling</span></div>
+        <div class="links"><a href="https://macsupportplus.github.io/fantasy-football-draft-assistant/" target="_blank" rel="noopener">Open the live app</a><a href="https://github.com/MacSupportPlus/fantasy-football-draft-assistant" target="_blank" rel="noopener">Read the code on GitHub</a></div>
+      </div>
+    </article>
+    <article class="case">
+      <div class="case-media">
+        <div class="shot">
+          <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>bet-edge-app.netlify.app/this-week/nfl</span></div>
+          <img src="img/edge-calculator.jpg" width="800" height="550" alt="NFL game card showing the model's win probability, the market's implied probability, expected value, and a recommended stake" loading="lazy">
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="client">Personal project, sports analytics</span>
+        <h3>A probability model that sizes every pick by its edge</h3>
+        <p>Each week it pulls the upcoming NFL and college football games with live odds, runs them through my own model, and shows only the games where the model's probability beats the market's, with a stake sized to the bankroll.</p>
+        <ul class="did">
+          <li><strong>Probability model:</strong> Elo ratings plus team-stat features like yards, turnover margin, and offensive efficiency, compared against the market's implied probability with the bookmaker's margin included.</li>
+          <li><strong>Kelly-criterion sizing</strong> turns each edge into a recommended stake, and a tracker logs results and closing-line value over time.</li>
+          <li><strong>Guardrails against overconfidence:</strong> when the model disagrees with the market by too much, the pick is flagged as a model limitation instead of being recommended.</li>
+        </ul>
+        <div class="stack"><span>Next.js</span><span>Netlify</span><span>Live odds data</span><span>Elo modeling</span><span>Kelly criterion</span></div>
+        <div class="links"><a href="https://bet-edge-app.netlify.app/" target="_blank" rel="noopener">Open the live app</a><a href="https://github.com/MacSupportPlus/bet-edge-app" target="_blank" rel="noopener">Read the code on GitHub</a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="services" aria-labelledby="svc-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="svc-title">What I can build for you</h2>
+      <p>Every project gets a written, fixed quote before any work starts. Prices below are where projects usually begin.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <h3>Business & nonprofit websites</h3>
+        <p>A fast, mobile-first site you can be proud to send people to, written around what you actually do. Includes hosting setup, domain, and launch.</p>
+        <span class="price">From $1,500 <small>usually 2–4 weeks</small></span>
+      </div>
+      <div class="svc">
+        <h3>Online stores</h3>
+        <p>Custom storefronts or a cleaner setup on the platform you already use, with Stripe checkout, inventory, and an admin you can run yourself.</p>
+        <span class="price">From $3,500 <small>usually 4–8 weeks</small></span>
+      </div>
+      <div class="svc">
+        <h3>AI features for your business</h3>
+        <p>A chat assistant that answers customer questions from your own content, tools that draft documents or sort inbound leads, and Claude or OpenAI connected to the software you already have.</p>
+        <span class="price">From $2,000 <small>scoped after a short call</small></span>
+      </div>
+      <div class="svc">
+        <h3>Moves, rescues & care plans</h3>
+        <p>Getting off Wix, Squarespace, or a locked-in host. Fixing broken DNS, email, or booking plugins. Then keeping the site updated, backed up, and watched.</p>
+        <span class="price">Fixes from $250 <small>care plans from $99 / month</small></span>
+      </div>
+    </div>
+    <div class="ai-note">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v6M12 16.5v.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <p><strong>On AI:</strong> I build generative AI features professionally in my day job, on enterprise products where accuracy is not optional. I'll tell you plainly when AI is the right tool for your problem and when a simpler fix will do.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="proc-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="proc-title">How a project runs</h2>
+      <p>The same procedure every time, borrowed from how the Navy runs a reactor plant: plan it, check it, then execute.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Short call</h3><p>Twenty minutes on what you need, what you have now, and your deadline.</p></li>
+      <li><h3>Fixed quote</h3><p>A written scope and price within two business days. You approve it before I start.</p></li>
+      <li><h3>Build on a preview link</h3><p>Your current site stays live. You review the new one at a private address as it comes together.</p></li>
+      <li><h3>Checked launch</h3><p>DNS, email, SSL, and forms verified against a checklist before and after the switch.</p></li>
+      <li><h3>Hand-off or care</h3><p>You get the logins and a short guide, or I keep it updated for you every month.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="about" aria-labelledby="about-title">
+  <div class="wrap about-grid">
+    <div>
+      <h2 id="about-title">About me</h2>
+    </div>
+    <div class="about-body">
+      <p>I'm Jason. I started my career as a nuclear propulsion operator in the U.S. Navy, where nothing gets touched without a procedure and a second set of eyes.</p>
+      <p>Today I'm a software engineer at a global legal and data analytics company, building web applications and generative AI features in Angular, C#, and AWS. On the side I run MacPlusSupport, building and rescuing websites, stores, and business email for small organizations.</p>
+      <p>Clients hire me because they get enterprise habits at small-business scale: plain-English updates, honest timelines, and launches that don't break the things that already work.</p>
+      <ul class="facts">
+        <li><span>Based in</span><span>Raleigh, NC, working with clients anywhere</span></li>
+        <li><span>Day job</span><span>Software Engineer III, enterprise legal tech</span></li>
+        <li><span>Before that</span><span>U.S. Navy, nuclear propulsion</span></li>
+        <li><span>Core stack</span><span>Angular, React / Next.js, C#, TypeScript, AWS</span></li>
+        <li><span>AI tools</span><span>Claude API, OpenAI API, MCP, prompt design</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 id="contact-title">Tell me about your project</h2>
+      <p class="lede" style="margin-top:1rem">A few sentences is plenty. I'll reply with questions or a time to talk.</p>
+      <p class="reply"><strong>I reply within one business day.</strong> Currently booking new projects.</p>
+    </div>
+    <form name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <div class="row2">
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+      </div>
+      <div class="row2">
+        <label>Business or organization<input name="organization" autocomplete="organization"></label>
+        <label>What do you need?
+          <select name="type">
+            <option>A new website</option>
+            <option>An online store</option>
+            <option>An AI feature</option>
+            <option>A move or a fix</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+      </div>
+      <label>Budget
+        <select name="budget">
+          <option>Under $1,500</option>
+          <option>$1,500 – $3,500</option>
+          <option>$3,500 – $7,500</option>
+          <option>$7,500+</option>
+          <option>Not sure yet</option>
+        </select>
+      </label>
+      <label>Project details<textarea name="message" required placeholder="What you have now, what you want, and any deadline."></textarea></label>
+      <button class="btn btn-ink" type="submit">Send project details</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Jason McElvain. Built by hand, hosted on Netlify.</span>
+    <span><a href="https://github.com/MacSupportPlus" target="_blank" rel="noopener">GitHub</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const head = document.querySelector('.site-head');
+  addEventListener('scroll', () => head.classList.toggle('scrolled', scrollY > 8), { passive: true });
+  const clock = document.getElementById('clock');
+  const tick = () => clock.textContent = 'Raleigh ' + new Date().toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' });
+  tick(); setInterval(tick, 30000);
+</script>
+</body>
+</html>
