@@ -10,10 +10,15 @@
 <link rel="canonical" href="https://jasonmcelvain.netlify.app/">
 <meta property="og:title" content="Jason McElvain — Full-Stack & AI Integration Developer">
 <meta property="og:description" content="Websites, online stores, and AI features — built properly and launched without downtime.">
-<meta property="og:image" content="https://jasonmcelvain.netlify.app/img/lower-echelon.jpg">
+<meta property="og:image" content="https://jasonmcelvain.netlify.app/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jason McElvain: websites, online stores, and AI features, launched without taking your business offline.">
+<meta name="twitter:image" content="https://jasonmcelvain.netlify.app/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#13201d">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2313201d'/%3E%3Ccircle cx='50' cy='14' r='5' fill='%2334c37a'/%3E%3Ctext x='30' y='45' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='30' text-anchor='middle' fill='%23eef1ef'%3EJM%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
@@ -62,7 +67,7 @@ h3{font-weight:750;font-size:clamp(1.35rem,2.2vw,1.75rem)}
 .site-head.scrolled{border-bottom-color:var(--rule)}
 .head-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:68px}
 .brand{font-weight:850;font-variation-settings:'wdth' var(--wide);text-decoration:none;font-size:1.1rem;letter-spacing:-0.01em;display:flex;align-items:center;gap:.55rem}
-.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--live-glow);box-shadow:0 0 0 3px rgba(52,195,122,.22)}
+.brand .mark{display:block;width:34px;height:34px}
 .nav{display:flex;align-items:center;gap:1.6rem}
 .nav a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--ink-2)}
 .nav a:hover{color:var(--ink)}
@@ -218,7 +223,7 @@ footer a{color:#cfdad6}
 
 <header class="site-head" id="top">
   <div class="wrap head-in">
-    <a class="brand" href="#top"><span class="dot" aria-hidden="true"></span>Jason McElvain</a>
+    <a class="brand" href="#top"><img src="img/mark.svg" width="34" height="34" alt="" class="mark">Jason McElvain</a>
     <nav class="nav" aria-label="Main">
       <a href="#work">Work</a>
       <a href="#services">Services</a>
@@ -258,9 +263,9 @@ footer a{color:#cfdad6}
         <li><span class="lamp live" aria-hidden="true"></span>
           <span><a href="https://richfest.org" target="_blank" rel="noopener">richfest.org</a><span class="host">Festival site and ticketing, Netlify</span></span>
           <span class="state live">Live</span></li>
-        <li><span class="lamp prev" aria-hidden="true"></span>
-          <span><a href="https://lower-echelon-worldwide.lowerechelon.workers.dev" target="_blank" rel="noopener">Lower Echelon store</a><span class="host">Next.js + Postgres, Cloudflare Workers</span></span>
-          <span class="state prev">Preview</span></li>
+        <li><span class="lamp live" aria-hidden="true"></span>
+          <span><a href="https://www.lowerechelonworldwide.com" target="_blank" rel="noopener">lowerechelonworldwide.com</a><span class="host">Custom store, Next.js + Postgres, Cloudflare</span></span>
+          <span class="state live">Live</span></li>
         <li><span class="lamp live" aria-hidden="true"></span>
           <span><a href="https://macsupportplus.github.io/fantasy-football-draft-assistant/" target="_blank" rel="noopener">Draft assistant</a><span class="host">Angular + data pipeline, GitHub Pages</span></span>
           <span class="state live">Live</span></li>
@@ -277,28 +282,28 @@ footer a{color:#cfdad6}
   <div class="wrap">
     <div class="sec-head">
       <h2 id="work-title">Recent work</h2>
-      <p>Real clients, real launches. Each one below is live or in a client preview you can open right now.</p>
+      <p>Real clients, real launches. Every project below is live, so you can open it right now.</p>
     </div>
 
     <article class="case">
       <div class="case-media">
         <div class="shot">
-          <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>lower-echelon-worldwide.lowerechelon.workers.dev</span></div>
+          <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>lowerechelonworldwide.com</span></div>
           <img src="img/lower-echelon.jpg" width="1030" height="1330" alt="Lower Echelon storefront homepage: a model in a green Lower Echelon track jacket in front of a housing tower" loading="lazy">
         </div>
         <img class="inset" src="img/lower-echelon-detail.jpg" width="700" height="1056" alt="Lower Echelon branded basketball held up against a brick building" loading="lazy">
       </div>
       <div class="case-body">
         <span class="client">Lower Echelon Worldwide, NYC streetwear brand</span>
-        <h3>A custom online store to replace an aging WooCommerce site</h3>
-        <p>The brand had outgrown a stock WordPress theme. I'm rebuilding it as a fast, motion-heavy storefront the owner runs himself, staged so the live shop is never at risk during the move.</p>
+        <h3>A custom online store that replaced an aging WooCommerce site</h3>
+        <p>The brand had outgrown a stock WordPress theme. I rebuilt it as a fast, motion-heavy storefront the owner runs himself, staged so the live shop was never at risk during the move.</p>
         <ul class="did">
           <li><strong>Owner-only admin panel</strong> to edit products, prices, per-size stock, and view orders, backed by a live Postgres database.</li>
           <li><strong>Solved a hosting blocker:</strong> Prisma's query engine can't run on Cloudflare Workers, so I kept Prisma for the schema and switched runtime queries to Kysely over Neon's HTTP driver. Verified in the real Workers runtime, not just locally.</li>
-          <li><strong>Runs on Cloudflare's free tier</strong> at about 1.2 MB, with a cutover plan that copies every DNS and email record before anything moves.</li>
+          <li><strong>Launched on the brand's own domain</strong> on Cloudflare at about 1.2 MB, with every DNS and email record copied over before the switch.</li>
         </ul>
         <div class="stack"><span>Next.js</span><span>TypeScript</span><span>Postgres (Neon)</span><span>Kysely</span><span>Cloudflare Workers</span><span>GSAP</span><span>Stripe (in progress)</span></div>
-        <div class="links"><a href="https://lower-echelon-worldwide.lowerechelon.workers.dev" target="_blank" rel="noopener">Open the preview</a><a href="https://github.com/MacSupportPlus/lower-echelon-storefront" target="_blank" rel="noopener">Read the code on GitHub</a></div>
+        <div class="links"><a href="https://www.lowerechelonworldwide.com" target="_blank" rel="noopener">Visit the live store</a><a href="https://github.com/MacSupportPlus/lower-echelon-storefront" target="_blank" rel="noopener">Read the code on GitHub</a></div>
       </div>
     </article>
 
