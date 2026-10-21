@@ -253,6 +253,10 @@ section{padding:clamp(64px,9vw,120px) 0}
 .did strong{color:var(--ink);font-weight:650}
 .stack{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.4rem}
 .stack span{font-size:.82rem;font-weight:550;padding:.28rem .62rem;border-radius:6px;background:var(--paper);border:1px solid var(--rule);color:var(--ink-2)}
+.quote{margin:0 0 1.4rem;padding:1rem 1.15rem 1rem 1.2rem;border-left:3px solid var(--live);background:var(--paper);border-radius:0 10px 10px 0;max-width:36em}
+.quote .stars{color:#e0a325;letter-spacing:.12em;font-size:.95rem;margin-bottom:.35rem}
+.quote blockquote{margin:0;font-size:1.02rem;line-height:1.55;color:var(--ink)}
+.quote figcaption{margin-top:.55rem;font-size:.88rem;font-weight:600;color:var(--ink-2)}
 .links{display:flex;flex-wrap:wrap;gap:1.2rem;font-weight:650}
 .links a{text-underline-offset:4px;text-decoration-thickness:2px;text-decoration-color:var(--live)}
 .links a:hover{color:var(--live)}
@@ -437,6 +441,11 @@ footer a{color:#cfdad6}
           <li><strong>Solved a hosting blocker:</strong> Prisma's query engine can't run on Cloudflare Workers, so I kept Prisma for the schema and switched runtime queries to Kysely over Neon's HTTP driver. Verified in the real Workers runtime, not just locally.</li>
           <li><strong>Launched on the brand's own domain</strong> on Cloudflare at about 1.2 MB, with every DNS and email record copied over before the switch.</li>
         </ul>
+        <figure class="quote">
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>“Great work! My site was a bit outdated and approaching my 5 yr anniversary, I wanted to revamp it and I’ll say perfect execution! My new and improved website is so nice and sleek while still keeping that grit energy that my brand wanted to portray!”</blockquote>
+          <figcaption>Sharif Cobb, Owner &amp; CEO, Lower Echelon Worldwide</figcaption>
+        </figure>
         <div class="stack"><span>Next.js</span><span>TypeScript</span><span>Postgres (Neon)</span><span>Kysely</span><span>Cloudflare Workers</span><span>GSAP</span><span>Stripe (in progress)</span></div>
         <div class="links"><a href="https://www.lowerechelonworldwide.com" target="_blank" rel="noopener">Visit the live store</a><a href="https://github.com/MacSupportPlus/lower-echelon-storefront" target="_blank" rel="noopener">Read the code on GitHub</a></div>
       </div>
