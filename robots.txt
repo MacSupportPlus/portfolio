@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /thanks.html
+Disallow: /review-thanks.html
+
+Sitemap: https://jasonmcelvain.netlify.app/sitemap.xml
