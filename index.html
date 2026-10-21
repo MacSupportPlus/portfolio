@@ -216,6 +216,31 @@ textarea{min-height:130px;resize:vertical}
 footer{background:var(--ink);color:#8fa29b;font-size:.88rem;padding:0 0 2.2rem}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,.1);padding-top:1.4rem}
 footer a{color:#cfdad6}
+
+/* ── Mobile polish ── */
+.hero-grid>*{min-width:0}
+.board li>span:nth-child(2){min-width:0}
+.board li a{overflow-wrap:break-word}
+.brand,.nav .btn{white-space:nowrap}
+@media (prefers-reduced-motion:no-preference){.board li:nth-child(6){animation-delay:.9s}}
+@media(max-width:760px){.svc:nth-child(n){border-right:0}}
+@media(max-width:560px){
+  .head-in{height:60px;gap:.75rem}
+  .brand{font-size:1rem;gap:.45rem}
+  .brand .mark{width:28px;height:28px}
+  .nav .btn{padding:.5rem .85rem;font-size:.86rem}
+  .hero{padding-top:32px}
+  .hero h1{font-size:clamp(1.8rem,9vw,2.3rem)}
+  .hero-cta .btn{flex:1 1 100%}
+  .creds{margin-top:1.8rem}
+  .board{padding:1.2rem 1.1rem 1rem}
+  .board-top{flex-wrap:wrap;gap:.2rem 1rem}
+  .facts li{display:grid;grid-template-columns:7.2em 1fr;gap:.75rem}
+  .facts li span:last-child{text-align:left}
+  footer .wrap{flex-direction:column;gap:.6rem}
+}
+@media(max-width:360px){.nav .btn{padding:.45rem .7rem;font-size:.8rem}.brand{font-size:.93rem}.brand .mark{width:24px;height:24px}}
+.foot-links{display:flex;gap:1.2rem;flex-wrap:wrap}
 </style>
 </head>
 <body>
@@ -258,7 +283,7 @@ footer a{color:#cfdad6}
       </div>
       <ul>
         <li><span class="lamp live" aria-hidden="true"></span>
-          <span><a href="https://communityhavenchattanooga.org" target="_blank" rel="noopener">communityhavenchattanooga.org</a><span class="host">Nonprofit rebuild, Netlify</span></span>
+          <span><a href="https://communityhavenchattanooga.org" target="_blank" rel="noopener">communityhaven<wbr>chattanooga.org</a><span class="host">Nonprofit rebuild, Netlify</span></span>
           <span class="state live">Live</span></li>
         <li><span class="lamp live" aria-hidden="true"></span>
           <span><a href="https://richfest.org" target="_blank" rel="noopener">richfest.org</a><span class="host">Festival site and ticketing, Netlify</span></span>
@@ -537,7 +562,7 @@ footer a{color:#cfdad6}
 <footer>
   <div class="wrap">
     <span>© <span id="yr">2026</span> Jason McElvain. Built by hand, hosted on Netlify.</span>
-    <span><a href="https://github.com/MacSupportPlus" target="_blank" rel="noopener">GitHub</a></span>
+    <span class="foot-links"><a href="/reviews.html">Worked with me? Leave a review</a><a href="https://github.com/MacSupportPlus" target="_blank" rel="noopener">GitHub</a></span>
   </div>
 </footer>
 
