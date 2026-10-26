@@ -8,7 +8,7 @@ My freelance portfolio: websites, online stores, and AI features for small busin
 
 ## What's on it
 - **A live status board** in the hero, listing the client sites and apps I'm currently running and where each is hosted
-- **Five case studies:** a custom Next.js + Postgres storefront on Cloudflare Workers, a nonprofit rebuild and host migration, a festival site with ticketing, a value-based fantasy draft board, and a sports probability model
+- **Seven case studies:** a custom Next.js + Postgres storefront on Cloudflare Workers, a nonprofit rebuild and host migration, a festival site with ticketing, an AI client-intake assistant, a value-based fantasy draft board, a sports probability model, and an invoicing app with Microsoft sign-in
 - **Services, process, and a contact form** handled by Netlify Forms, with a honeypot field for spam
 
 ## Built with

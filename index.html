@@ -117,6 +117,13 @@
        "@type": "Service",
        "name": "Website moves, rescues and care plans"
       }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Custom business apps with Microsoft 365 sign-in"
+      }
      }
     ]
    }
@@ -280,6 +287,8 @@ section{padding:clamp(64px,9vw,120px) 0}
 .svc:nth-child(even){padding-left:2rem;padding-right:0}
 .svc h3{font-size:1.45rem;margin-bottom:.6rem}
 .svc p{color:var(--ink-2);max-width:30em}
+.svc.wide{grid-column:1/-1;border-right:0;padding-right:0}
+.svc.wide p{max-width:46em}
 .price{display:block;margin-top:1rem;font-weight:700;font-size:1.05rem}
 .price small{font-weight:500;color:var(--steel);font-size:.9rem}
 .ai-note{margin-top:2.2rem;padding:1.3rem 1.5rem;border-radius:12px;background:var(--panel);border:1px solid var(--rule);display:flex;gap:1rem;align-items:flex-start;max-width:52em}
@@ -410,6 +419,9 @@ footer a{color:#cfdad6}
           <span class="state live">Live</span></li>
         <li><span class="lamp live" aria-hidden="true"></span>
           <span><a href="https://bet-edge-app.netlify.app/" target="_blank" rel="noopener">Edge calculator</a><span class="host">Probability model + live odds, Netlify</span></span>
+          <span class="state live">Live</span></li>
+        <li><span class="lamp live" aria-hidden="true"></span>
+          <span><a href="https://macplussupport-office.vercel.app/" target="_blank" rel="noopener">MacPlusSupport Office</a><span class="host">Invoicing app, Microsoft sign-in, Vercel</span></span>
           <span class="state live">Live</span></li>
       </ul>
       <p class="board-foot">Every launch follows the same checklist: old site stays up, DNS and email records copied first.</p>
@@ -559,6 +571,26 @@ footer a{color:#cfdad6}
         <div class="links"><a href="https://bet-edge-app.netlify.app/" target="_blank" rel="noopener">Open the live app</a><a href="https://github.com/MacSupportPlus/bet-edge-app" target="_blank" rel="noopener">Read the code on GitHub</a></div>
       </div>
     </article>
+    <article class="case" id="office-demo">
+      <div class="case-media">
+        <div class="shot">
+          <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>macplussupport-office.vercel.app</span></div>
+          <img src="img/macplussupport-office.jpg" width="800" height="560" alt="Invoice INV-2026-0003 for Oak Street Bakery: a website care plan, Mac setup for two workstations, and on-site Wi-Fi troubleshooting, totaling $519" loading="lazy">
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="client">Portfolio build, small-business software</span>
+        <h3>An invoicing app your team signs into with Microsoft</h3>
+        <p>A working invoicing tool for small businesses. Anyone can sign in with a Microsoft account, work or personal, and gets a private sandbox business with fictional clients to try it out.</p>
+        <ul class="did">
+          <li><strong>Microsoft sign-in done properly:</strong> Entra ID with MSAL and PKCE, asking only to read the user's basic profile. Sign-in tokens are encrypted before they're stored.</li>
+          <li><strong>Invoice numbers that can't collide:</strong> a load test fires 300 invoices at once and gets 300 unique numbers with no gaps, while the common shortcut fails with duplicates.</li>
+          <li><strong>Each business sees only its own data:</strong> every query is scoped to the signed-in business, never to an id from a form or URL.</li>
+        </ul>
+        <div class="stack"><span>Next.js 16</span><span>TypeScript</span><span>Postgres (Neon)</span><span>Microsoft Entra ID</span><span>Microsoft Graph</span><span>Vercel</span></div>
+        <div class="links"><a href="https://macplussupport-office.vercel.app/" target="_blank" rel="noopener">Open the live app</a><a href="https://github.com/MacSupportPlus/macplussupport-office" target="_blank" rel="noopener">Read the code on GitHub</a></div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -588,6 +620,11 @@ footer a{color:#cfdad6}
         <h3>Moves, rescues & care plans</h3>
         <p>Getting off Wix, Squarespace, or a locked-in host. Fixing broken DNS, email, or booking plugins. Then keeping the site updated, backed up, and watched.</p>
         <span class="price">Fixes from $250 <small>care plans from $99 / month</small></span>
+      </div>
+      <div class="svc wide">
+        <h3>Custom business apps with Microsoft 365 sign-in</h3>
+        <p>Invoicing, booking, or client-portal tools your team signs into with the Microsoft accounts they already use, no new passwords. Your data lives in your own Postgres database, every record is locked to your business, and it runs on Vercel. <a href="#office-demo">See the live invoicing app</a>.</p>
+        <span class="price">From $4,000 <small>usually 4–6 weeks</small></span>
       </div>
     </div>
     <div class="ai-note">
